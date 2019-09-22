@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServiceService } from './services/service.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'githubUsers';
+  user;
+  constructor(private srv: ServiceService ) { }
+  ngOnInit(): void {
+    
+  }
+  getUser(){
+    this.srv.getData()
+      .subscribe(data=>this.user=data);
+    this.user = this.user;
+  }
 }
