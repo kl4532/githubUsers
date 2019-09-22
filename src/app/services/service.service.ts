@@ -5,9 +5,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ServiceService {
-  url: string = "https://api.github.com/search/users?q=kl4532";
+  url: string = "https://api.github.com/search/users?q=";
   constructor(private http: HttpClient) { }
-  getData(){
-    return this.http.get(this.url);
+  getData(name){
+    return this.http.get(this.url+name);
   }
 }

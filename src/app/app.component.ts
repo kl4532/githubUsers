@@ -12,9 +12,9 @@ export class AppComponent {
   ngOnInit(): void {
     
   }
-  getUser(){
-    this.srv.getData()
-      .subscribe(data=>this.user=data);
-    this.user = this.user;
+  getUser(name){
+    this.srv.getData(name)
+      .subscribe(data=>this.user=data.items[0]);
+    console.log(this.user);
   }
 }

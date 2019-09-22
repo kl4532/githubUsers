@@ -1,7 +1,9 @@
 <input type="text" [(ngModel)]="username">
-<button class="btn btn-success" (click)="getUser()">search</button>
-
+<button class="btn btn-success" (click)="getUser(username)">search</button>
 <ul *ngIf="user">
-  <img [src]="" alt="">
-  <li>{{ user.items[0].id }}</li>
+  <img [src]="user.avatar_url" style="width: 100px">
+  <li>{{ user.login }}</li>
+  <li>{{ user.id }}</li>
+  <a [href]="user.html_url" target="_blank">page</a>
+
 </ul>
