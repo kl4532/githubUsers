@@ -1,20 +1,20 @@
-<div class="input-group my-5 col-sm-12 col-md-8 col-lg-7" >
   <form>
-      <input type="text" [(ngModel)]="username" class="form-control p-4" placeholder="find user" aria-label="Find user">
-      <div class="input-group-append">
-        <button type="submit" (click)="getUser(username)" class="btn btn-outline-primary" >Search</button>
-      </div>
+    <div class="input-group my-5 col-sm-12 col-md-8 col-lg-7">
+        <input type="text"  name="username" [(ngModel)]="username" class="form-control p-4" placeholder="find user" aria-label="Find user">
+        <div class="input-group-append">
+          <button type="submit" (click)="getUser(username)" class="btn btn-outline-primary" >Search</button>
+        </div>
+    </div>      
   </form>
-</div>
 
-<div class="info" *ngIf="user">
+<div class="basics" *ngIf="user">
   <a [href]="user.html_url" target="_blank"><img [src]="user.avatar_url" style="width: 100px"></a>
   <div>
     <a [href]="user.html_url" target="_blank"><b>{{ user.login }}</b></a>
   </div>
 </div>
 
-<div *ngIf="user" class="accordion" id="accordionExample">
+<div class="more" *ngIf="user" class="accordion" id="accordionExample">
   <div class="card">
     <div class="card-header" id="headingOne">
       <h2 class="mb-0">
