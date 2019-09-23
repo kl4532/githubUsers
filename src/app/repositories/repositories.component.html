@@ -1,0 +1,19 @@
+<ng-container *ngIf="repos">
+  <div class="details" *ngFor="let repo of repos; index as i" class="accordion" id="accordion">
+    <div class="card">
+      <div class="card-header" id="heading{{i}}">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" [attr.data-target]="'#collapse'+i" aria-expanded="false" [attr.aria-controls]="'collapse'+i">{{ repo.name }}({{repo.language}})
+          </button>
+        </h2>
+      </div>
+      <div id="collapse{{i}}" class="collapse" aria-labelledby="'heading'+i" data-parent="#accordion">
+        <div class="card-body">
+          {{ repo.description }}
+          <br>
+          <a href="repo.html_url">| link |</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
