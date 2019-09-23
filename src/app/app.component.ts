@@ -14,6 +14,9 @@ export class AppComponent {
   }
   getUser(name){
     this.srv.getData(name)
-      .subscribe(data=>this.user=data['items'][0]);
+      .subscribe(
+        data=>this.user=data['items'][0],
+        error => console.log(error.message)
+      );
   }
 }
