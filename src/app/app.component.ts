@@ -9,7 +9,5 @@ import { ServiceService } from './services/service.service';
 export class AppComponent {
   constructor(private srv: ServiceService) { }
   ngOnInit(): void {
-    
   }
-  
 }
