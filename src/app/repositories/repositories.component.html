@@ -9,6 +9,7 @@
       </div>
       <div id="collapse{{i}}" class="collapse" aria-labelledby="'heading'+i" data-parent="#accordion">
         <div class="card-body">
+          <ng-container *ngIf="!repo.description"><em>No description</em></ng-container>
           {{ repo.description }}
           <br>
           <a href="{{ repo.html_url }}" target="_blank">| link |</a>
